@@ -52,9 +52,9 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AppBoard {
-        "size"?: number;
-        "xs"?: number[][];
-        "ys"?: number[][];
+        "size": number;
+        "xs": number[][];
+        "ys": number[][];
     }
     interface AppCanvas {
     }

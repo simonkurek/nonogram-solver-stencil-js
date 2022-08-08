@@ -6,9 +6,9 @@ import { Component, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class AppBoard {
-  @Prop() size: number;
-  @Prop() xs: number[][];
-  @Prop() ys: number[][];
+  @Prop() size!: number;
+  @Prop() xs!: number[][];
+  @Prop() ys!: number[][];
 
   componentWillLoad() {
     console.log('componentWillLoad');
@@ -38,16 +38,11 @@ export class AppBoard {
               return (
                 <tr>
                   <th>{row.join(' ')}</th>
-                  <td data-x="0" data-y="0" class="none"></td>
-                  <td data-x="1" data-y="0" class="none"></td>
-                  <td data-x="2" data-y="0" class="none"></td>
-                  <td data-x="3" data-y="0" class="none"></td>
-                  <td data-x="4" data-y="0" class="none"></td>
-                  <td data-x="5" data-y="0" class="none"></td>
-                  <td data-x="6" data-y="0" class="none"></td>
-                  <td data-x="7" data-y="0" class="none"></td>
-                  <td data-x="8" data-y="0" class="none"></td>
-                  <td data-x="9" data-y="0" class="none"></td>
+                  {Array(this.size)
+                    .fill(0)
+                    .map(_ => {
+                      return <td class="none"></td>;
+                    })}
                 </tr>
               );
             })}
