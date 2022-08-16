@@ -34,7 +34,7 @@ export class AppBoard {
                 );
               })}
             </tr>
-            {this.ys.map((row, y) => {
+            {this.ys.map(row => {
               return (
                 <tr>
                   <th>{row.join(' ')}</th>

@@ -35,7 +35,7 @@
   opacity: 0.85;
   background-color: #f3f3f3;
 }
-#game td.on {
+#game .on {
   background-color: #6d6;
 }
 #game td.off {

@@ -7,6 +7,10 @@ import { Component, h } from '@stencil/core';
 })
 export class AppHeader {
   render() {
-    return <h1>Nonogram Solver</h1>;
+    return (
+      <div>
+        <h1>Nonogram Solver</h1>
+      </div>
+    );
   }
 }

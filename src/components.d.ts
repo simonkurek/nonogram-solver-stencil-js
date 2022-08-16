@@ -11,9 +11,14 @@ export namespace Components {
         "xs": number[][];
         "ys": number[][];
     }
+    interface AppButton {
+        "stickied": boolean;
+    }
     interface AppCanvas {
     }
     interface AppHeader {
+    }
+    interface AppInput {
     }
     interface AppRoot {
     }
@@ -24,6 +29,12 @@ declare global {
     var HTMLAppBoardElement: {
         prototype: HTMLAppBoardElement;
         new (): HTMLAppBoardElement;
+    };
+    interface HTMLAppButtonElement extends Components.AppButton, HTMLStencilElement {
+    }
+    var HTMLAppButtonElement: {
+        prototype: HTMLAppButtonElement;
+        new (): HTMLAppButtonElement;
     };
     interface HTMLAppCanvasElement extends Components.AppCanvas, HTMLStencilElement {
     }
@@ -37,6 +48,12 @@ declare global {
         prototype: HTMLAppHeaderElement;
         new (): HTMLAppHeaderElement;
     };
+    interface HTMLAppInputElement extends Components.AppInput, HTMLStencilElement {
+    }
+    var HTMLAppInputElement: {
+        prototype: HTMLAppInputElement;
+        new (): HTMLAppInputElement;
+    };
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
     }
     var HTMLAppRootElement: {
@@ -45,8 +62,10 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "app-board": HTMLAppBoardElement;
+        "app-button": HTMLAppButtonElement;
         "app-canvas": HTMLAppCanvasElement;
         "app-header": HTMLAppHeaderElement;
+        "app-input": HTMLAppInputElement;
         "app-root": HTMLAppRootElement;
     }
 }
@@ -56,16 +75,23 @@ declare namespace LocalJSX {
         "xs": number[][];
         "ys": number[][];
     }
+    interface AppButton {
+        "stickied"?: boolean;
+    }
     interface AppCanvas {
     }
     interface AppHeader {
+    }
+    interface AppInput {
     }
     interface AppRoot {
     }
     interface IntrinsicElements {
         "app-board": AppBoard;
+        "app-button": AppButton;
         "app-canvas": AppCanvas;
         "app-header": AppHeader;
+        "app-input": AppInput;
         "app-root": AppRoot;
     }
 }
@@ -74,8 +100,10 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-board": LocalJSX.AppBoard & JSXBase.HTMLAttributes<HTMLAppBoardElement>;
+            "app-button": LocalJSX.AppButton & JSXBase.HTMLAttributes<HTMLAppButtonElement>;
             "app-canvas": LocalJSX.AppCanvas & JSXBase.HTMLAttributes<HTMLAppCanvasElement>;
             "app-header": LocalJSX.AppHeader & JSXBase.HTMLAttributes<HTMLAppHeaderElement>;
+            "app-input": LocalJSX.AppInput & JSXBase.HTMLAttributes<HTMLAppInputElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
         }
     }

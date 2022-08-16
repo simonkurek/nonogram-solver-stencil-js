@@ -1,0 +1,24 @@
+input {
+  all: unset;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 1em 0em 0em 1em;
+  width: 3em;
+  height: 1em;
+  padding: 0.4em;
+  font-size: 0.6em;
+  color: rgb(82, 80, 80);
+  margin-right: 0;
+  /* padding: 0.625rem;
+  background-color: #f9fafb;
+  color: #111827;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 5em;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-color: #d1d5db;
+  margin: 0;
+  margin-right: auto;
+  margin-left: auto; */
+}
