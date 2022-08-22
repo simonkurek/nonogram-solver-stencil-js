@@ -12,6 +12,7 @@ export namespace Components {
         "ys": number[][];
     }
     interface AppButton {
+        "onClick": () => void;
         "stickied": boolean;
     }
     interface AppCanvas {
@@ -76,6 +77,8 @@ declare namespace LocalJSX {
         "ys": number[][];
     }
     interface AppButton {
+        "onButtonClickEvent"?: (event: CustomEvent<boolean>) => void;
+        "onClick"?: () => void;
         "stickied"?: boolean;
     }
     interface AppCanvas {

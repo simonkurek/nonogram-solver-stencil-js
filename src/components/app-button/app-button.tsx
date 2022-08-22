@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'app-button',
@@ -7,14 +7,21 @@ import { Component, h, Prop } from '@stencil/core';
 })
 export class AppButton {
   @Prop() stickied: boolean = false;
+  @Prop() onClick: () => void;
 
-  onClick = () => {
-    console.log('onClick');
-  };
+  @Event({
+    bubbles: true,
+    composed: true,
+  })
+  buttonClickEvent: EventEmitter<boolean>;
+
+  onButtonClick() {
+    this.buttonClickEvent.emit(true);
+  }
 
   render() {
     return (
-      <button class={this.stickied ? 'stickied' : ''} onClick={this.onClick}>
+      <button class={this.stickied ? 'stickied' : ''} onClick={this.onButtonClick.bind(this)}>
         <slot />
       </button>
     );

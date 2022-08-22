@@ -1,4 +1,4 @@
-import { Component, h, State } from '@stencil/core';
+import { Component, h, Listen, State } from '@stencil/core';
 
 @Component({
   tag: 'app-input',
@@ -7,6 +7,10 @@ import { Component, h, State } from '@stencil/core';
 })
 export class AppInput {
   @State() value: number = 10;
+  @Listen('buttonClickEvent', { target: 'body' })
+  handleButtonClick(event: CustomEvent<boolean>) {
+    console.log(`Button clicked, input with value ${this.value}`);
+  }
 
   handleChange(e) {
     console.log(`handleChange: ${e.target.value}`);

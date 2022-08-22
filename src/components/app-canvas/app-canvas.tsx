@@ -38,7 +38,14 @@ export class AppCanvas {
             <h5>Size of the nonogram</h5>
             <h6>nonogram must be square!</h6>
             <app-input />
-            <app-button stickied>Confirm</app-button>
+            <app-button
+              stickied
+              onClick={() => {
+                console.log('elo');
+              }}
+            >
+              Confirm
+            </app-button>
           </div>
         )}
       </div>
